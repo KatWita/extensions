@@ -1,7 +1,7 @@
 <template>
 	<div class="card">
 		<div class="content">
-			<img :src="`/src/${user.logo}`" alt="" />
+			<img :src="user.logo" alt="" />
 			<div>
 				<h3>{{ user.name }}</h3>
 				<p>{{ user.description }}</p>
