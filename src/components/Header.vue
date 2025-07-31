@@ -2,20 +2,29 @@
 	<header>
 		<h1>Extensions List</h1>
 		<div class="filter-buttons">
-			<router-link to="/">
-				<button @click="usersStore.changeLinkFilter('all')" :class="{ active: usersStore.filter === 'all' }">
-					All
-				</button>
+			<router-link
+				to="/"
+				class="button"
+				@click="usersStore.changeLinkFilter('all')"
+				:class="{ active: usersStore.filter === 'all' }"
+			>
+				All
 			</router-link>
-			<router-link to="/active">
-				<button @click="usersStore.changeLinkFilter('active')" :class="{ active: usersStore.filter === 'active' }">
-					Active
-				</button>
+			<router-link
+				to="/active"
+				class="button"
+				@click="usersStore.changeLinkFilter('active')"
+				:class="{ active: usersStore.filter === 'active' }"
+			>
+				Active
 			</router-link>
-			<router-link to="/inactive">
-				<button @click="usersStore.changeLinkFilter('inactive')" :class="{ active: usersStore.filter === 'inactive' }">
-					Inactive
-				</button>
+			<router-link
+				to="/inactive"
+				class="button"
+				@click="usersStore.changeLinkFilter('inactive')"
+				:class="{ active: usersStore.filter === 'inactive' }"
+			>
+				Inactive
 			</router-link>
 		</div>
 	</header>
@@ -43,12 +52,12 @@ header h1 {
 	gap: 0.8em;
 }
 
-.filter-buttons button {
+.filter-buttons a {
 	font-size: 1.25rem;
 	border: 1px solid var(--header-btn-border);
 }
 
-.filter-buttons button.active {
+.filter-buttons a.active {
 	background-color: var(--header-active-btn-bg);
 	border: 1px solid var(--header-active-btn-bg);
 	color: var(--header-btn-active-text);

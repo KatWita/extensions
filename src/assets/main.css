@@ -102,6 +102,11 @@ body {
 	color: var(--text);
 }
 
+a {
+	text-decoration: none;
+}
+
+a,
 button {
 	padding: 0.45em 1em;
 	border-radius: 800px;
@@ -110,11 +115,13 @@ button {
 	transition: background-color 0.3s, color 0.3s, border 0.3s;
 }
 
+a:hover,
 button:hover {
 	background-color: var(--filter-hover);
 	color: var(--filter-btn-color);
 }
 
+a:focus-visible,
 button:focus-visible {
 	outline: 3px solid var(--red-500);
 	outline-offset: 3px;
