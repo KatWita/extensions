@@ -4,13 +4,13 @@ export const useUserStore = defineStore('usersStore', {
 	state: () => ({
 		users: [
 			{
-				logo: 'public/images/logo-devlens.svg',
+				logo: './public/images/logo-devlens.svg',
 				name: 'DevLens',
 				description: 'Quickly inspect page layouts and visualize element boundaries.',
 				isActive: true,
 			},
 			{
-				logo: '/src/assets/images/logo-style-spy.svg',
+				logo: '/public/images/logo-style-spy.svg',
 				name: 'StyleSpy',
 				description: 'Instantly analyze and copy CSS from any webpage element.',
 				isActive: true,
