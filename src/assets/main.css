@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	/* neutral */
+	--neutral-900: hsl(227, 75%, 14%);
+	--neutral-800: hsl(226, 25%, 17%);
+	--neutral-700: hsl(225, 23%, 24%);
+	--neutral-600: hsl(226, 11%, 37%);
+	--neutral-500: hsl(226, 10%, 43%);
+	--neutral-300: hsl(0, 0%, 78%);
+	--neutral-200: hsl(217, 61%, 90%);
+	--neutral-100: hsl(0, 0%, 93%);
+	--neutral: hsl(200, 60%, 99%);
+
+	/* red */
+	--red-700: hsl(3, 77%, 44%);
+	--red-500: hsl(3, 71%, 56%);
+	--red-400: hsl(3, 86%, 64%);
+
+	/* gradient */
+	--light-gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+	--dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+
+	/* font */
+	--font-size: 16px;
+
+	/* box-shadow */
+	--box-shadow: hsl(205, 11%, 62%);
+
+	/* light theme */
+	--bg: var(--light-gradient);
+	--logo-hover: var(--red-500);
+	--logo-img: var(--red-700);
+	--logo-text: var(--neutral-900);
+	--nav-bg: var(--neutral);
+	--nav-box-shadow: var(--neutral-200);
+	--nav-icon-bg: var(--neutral-100);
+	--nav-icon-bg-hover: var(--neutral-300);
+	--text: var(--neutral-900);
+	--header-active-btn-bg: var(--red-700);
+	--header-btn-active-text: var(--neutral);
+	--header-btn-border: var(--neutral-200);
+	--header-btn-bg: var(--neutral);
+	--card-bg: var(--neutral);
+	--card-border: var(--neutral-200);
+	--card-p: var(--neutral-800);
+	--remove-button-border: var(--neutral-300);
+	--filter-btn-color: var(--neutral-600);
+	--filter-btn-active-color: var(--neutral);
+	--filter-hover: var(--neutral);
+	--filter-active-hover: var(--red-500);
+	--toggle-hover: var(--neutral-500);
+	--toggle-active-hover: var(--red-500);
+	--remove-focus-btn: var(--neutral-100);
+
+	/* dark theme */
+	.dark {
+		--bg: var(--dark-gradient);
+		--logo-hover: var(--red-700);
+		--logo-img: var(--red-400);
+		--logo-text: var(--neutral);
+		--nav-bg: var(--neutral-800);
+		--nav-box-shadow: hsla(204, 20%, 71%, 0);
+		--nav-icon-bg: var(--neutral-700);
+		--nav-icon-bg-hover: var(--neutral-600);
+		--text: var(--neutral);
+		--header-active-btn-bg: var(--red-400);
+		--header-btn-active-text: var(--neutral-900);
+		--header-btn-border: var(--neutral-600);
+		--header-btn-bg: var(--neutral-700);
+		--card-bg: var(--neutral-800);
+		--card-border: var(--neutral-600);
+		--card-p: var(--neutral-300);
+		--remove-button-border: var(--neutral-600);
+		--filter-btn-color: var(--neutral);
+		--filter-btn-active-color: var(--neutral-800);
+		--filter-hover: var(--neutral-600);
+		--filter-active-hover: var(--red-500);
+		--toggle-hover: var(--neutral-500);
+		--toggle-active-hover: var(--red-500);
+		--remove-focus-btn: var(--neutral-600);
+	}
+}
+
+html,
+button {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+	padding: 1em 0.8em;
+	min-height: 100vh;
+	background: var(--bg);
+	color: var(--text);
+}
+
+button {
+	padding: 0.45em 1em;
+	border-radius: 800px;
+	background-color: var(--header-btn-bg);
+	color: var(--text);
+	transition: background-color 0.3s, color 0.3s, border 0.3s;
+}
+
+button:hover {
+	background-color: var(--filter-hover);
+	color: var(--filter-btn-color);
+}
+
+button:focus-visible {
+	outline: 3px solid var(--red-500);
+	outline-offset: 3px;
+}
+
+.extensions-enter-from,
+.extensions-leave-to {
+	opacity: 0;
+	transform: translateY(40px);
+}
+
+.extensions-enter-active,
+.extensions-leave-active {
+	transition: all 0.3s ease;
+}
+
+.list-enter-from {
+	opacity: 0;
+	transform: translateY(-40px);
+}
+
+.list-enter-active,
+.list-leave-active {
+	transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.list-leave-to {
+	opacity: 0;
+	transform: translateY(-40px);
+}
+
+.empty {
+	text-align: center;
+}
+
+@media (width >= 64rem) {
+	body {
+		padding: 2em;
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	.card-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1em;
+	}
+}
+
+@media (width >= 80rem) {
+	nav,
+	header,
+	main {
+		max-width: 1230px;
+		margin: 0 auto;
+	}
+
+	.card-container {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
