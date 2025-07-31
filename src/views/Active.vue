@@ -1,7 +1,7 @@
 <template>
 	<main>
 		<div v-if="usersStore.filter === 'active'">
-			<Transition name="extensions" mode="out-in">
+			<Transition name="extensions" mode="out-in" appear>
 				<div v-if="usersStore.active.length">
 					<TransitionGroup tag="div" name="list" appear class="card-container">
 						<div v-for="user in usersStore.active" :key="user.name">
